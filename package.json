@@ -1,0 +1,43 @@
+{
+  "name": "bot-skeleton-nodejs",
+  "version": "1.0.0",
+  "author": "Token27 <tokentwentyseven@gmail.com>",
+  "description": "Slack bot to help a project team",
+  "homepage": "https://github.com/token27/bot-skeleton-nodejs#readme",
+  "license": "MIT",
+  "keywords": [
+    "slack",
+    "bot",
+    "logger",
+    "channel"
+  ],
+  "bugs": {
+    "url": "https://github.com/token27/bot-skeleton-nodejs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/token27/bot-skeleton-nodejs.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "production": "SET NODE_ENV=production && nodemon src/index.js",
+    "development": "SET NODE_ENV=development && nodemon src/index.js",
+    "test": "SET NODE_ENV=test && nodemon src/index.js",
+    "ngrok": "ngrok http 5005"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "i18n": "^0.13.2",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "ngrok": "^3.4.0",
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}

@@ -1,0 +1,39 @@
+version: '3'
+networks:
+  slack-bots:
+services:
+  mysql:
+    container_name: slack-bots-mysql
+    image: mysql:5.7
+    restart: always
+    ports:
+        - '33065:3306'
+    volumes:
+      - ./docker/database:/var/lib/mysql
+    env_file:
+      - ./docker/.env
+    networks:
+      - slack-bots
+  phpmyadmin:
+    container_name: slack-bots-phpmyadmin
+    depends_on:
+      - mysql
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8085:80'
+    env_file:
+      - ./docker/.env
+    networks:
+      - slack-bots
+  node:
+    container_name: slack-bots-channel-historial
+    depends_on:
+      - mysql
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "5005:5005"
+    env_file:
+      - ./.env
