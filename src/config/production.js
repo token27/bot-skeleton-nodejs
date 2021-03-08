@@ -4,16 +4,16 @@ const path = require('path');
 
 const productionConfig = {
     app: {
-        port: 5005
+        port: 3005
     },
     db: {
         logging: false,
         dialect: 'mysql',
-        host: 'localhost',
-        port: 3306,
-        username: 'production_user',
-        password: 'production_user_password',
-        name: 'production'
+        host: process.env.DATABASE_HOST,
+        port: process.env.DATABASE_PORT,
+        name: process.env.DATABASE_NAME,
+        username: process.env.DATABASE_USER,
+        password: process.env.DATABASE_PASSWORD
     }
 };
 

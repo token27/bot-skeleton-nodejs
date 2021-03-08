@@ -16,6 +16,6 @@ COPY . .
 
 COPY --chown=node:node . .
 
-EXPOSE 5005
+EXPOSE 3005
 
 CMD ["npm", "start"]

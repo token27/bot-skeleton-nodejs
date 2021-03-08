@@ -2,16 +2,16 @@
 
 const testConfig = {
     app: {
-        port: 5005
+        port: 3005
     },
     db: {
         logging: false,
         dialect: 'mysql',
-        host: 'localhost',
-        port: 6603,
-        username: 'my_database_user',
-        password: 'my_database_user_password',
-        name: 'my_database'
+        host: process.env.DATABASE_HOST || 'localhost',
+        port: process.env.DATABASE_PORT || 33065,
+        name: process.env.DATABASE_NAME || 'my_database',
+        username: process.env.DATABASE_USER || 'root',
+        password: process.env.DATABASE_PASSWORD || 'root'
     }
 };
 

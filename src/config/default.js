@@ -4,7 +4,7 @@ const path = require('path');
 
 const defaultConfig = {
     app: {
-        port: 5005
+        port: 3005
     },
     db: {
         logging: true,
